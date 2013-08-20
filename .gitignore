@@ -100,3 +100,6 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
+
+# Own project setup
+Artifacts/
