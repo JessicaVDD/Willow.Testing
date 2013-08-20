@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4D43957-0AD9-41F1-A192-E902B3CCCBAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Willow.Testing</RootNamespace>
+    <AssemblyName>Willow.Testing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\packages\Machine.Fakes.0.5\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
+      <HintPath>..\packages\Machine.Fakes.RhinoMocks.0.5\lib\net40\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications.0.5.7\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\packages\Machine.Specifications.0.5.7\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BlockThat.cs" />
+    <Compile Include="Core\Factories\Factories.cs" />
+    <Compile Include="Core\Factories\ICreateANonGenericToGenericFakeAdapter.cs" />
+    <Compile Include="Core\Factories\ICreateTheDependencyRegistry.cs" />
+    <Compile Include="Core\Factories\ICreateTheFactoryThatCreatesTheSUT.cs" />
+    <Compile Include="Core\Factories\ICreateTheFakesGateway.cs" />
+    <Compile Include="Core\Factories\ICreateTheMainObservationController.cs" />
+    <Compile Include="Core\Factories\ICreateTheNonCtorDependencyVisitor.cs" />
+    <Compile Include="Core\Factories\ICreateTheTestState.cs" />
+    <Compile Include="Core\Factories\NonCtorDependencySetter.cs" />
+    <Compile Include="Core\IConfigureSetupPairs.cs" />
+    <Compile Include="Core\IConfigureSpecifications.cs" />
+    <Compile Include="Core\IConfigureTheSUT.cs" />
+    <Compile Include="Core\IConfigureTheTestStateFor.cs" />
+    <Compile Include="Core\ICreateFakes.cs" />
+    <Compile Include="Core\ICreateTheSUT.cs" />
+    <Compile Include="Core\IManageFakes.cs" />
+    <Compile Include="Core\IMatchAnItem.cs" />
+    <Compile Include="Core\IProvideDependencies.cs" />
+    <Compile Include="Core\NegatingMatcher.cs" />
+    <Compile Include="Core\Reflection\AccessorHasAValue.cs" />
+    <Compile Include="Core\Reflection\FieldMemberAccessor.cs" />
+    <Compile Include="Core\Reflection\MemberAccessor.cs" />
+    <Compile Include="Core\Reflection\PropertyInfoMemberAccessor.cs" />
+    <Compile Include="Core\TestStateFor.cs" />
+    <Compile Include="DefaultObservationController.cs" />
+    <Compile Include="DefaultTestStateFor.cs" />
+    <Compile Include="Dsl\FieldSwitching\ChangeExpression.cs" />
+    <Compile Include="Dsl\FieldSwitching\DefaultFieldSwitcherFactory.cs" />
+    <Compile Include="Dsl\FieldSwitching\FieldReassignmentStartExpression.cs" />
+    <Compile Include="Dsl\FieldSwitching\FieldSwitcherFactory.cs" />
+    <Compile Include="Dsl\FieldSwitching\ICreateAnAccessorForAMember.cs" />
+    <Compile Include="Dsl\FieldSwitching\ISwapValues.cs" />
+    <Compile Include="Dsl\FieldSwitching\MemberTargetValueSwapper.cs" />
+    <Compile Include="Extensions\AssertionExtensions.cs" />
+    <Compile Include="Extensions\CreateFakesExtensions.cs" />
+    <Compile Include="Extensions\EnumerableAssertionExtensions.cs" />
+    <Compile Include="Extensions\FakeExtensions.cs" />
+    <Compile Include="Extensions\IterationExtensions.cs" />
+    <Compile Include="Extensions\MatchExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TypeCastingExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Faking\DefaultSUTFactory.cs" />
+    <Compile Include="Faking\DelegateFactory.cs" />
+    <Compile Include="Faking\DependencyRegistry.cs" />
+    <Compile Include="Faking\FakesAdapter.cs" />
+    <Compile Include="Faking\ICreateAndManageDependenciesFor.cs" />
+    <Compile Include="Faking\ICreateDelegatesWithDummyImplementations.cs" />
+    <Compile Include="Faking\IResolveADependencyForTheSUT.cs" />
+    <Compile Include="Faking\IUpdateNonCtorDependenciesOnAnItem.cs" />
+    <Compile Include="Faking\SUTDependencyResolver.cs" />
+    <Compile Include="Faking\SUTFactory.cs" />
+    <Compile Include="Faking\ValueTypeFaking\FloatingPointRandomizer.cs" />
+    <Compile Include="Faking\ValueTypeFaking\GeneralRandomizer.cs" />
+    <Compile Include="Faking\ValueTypeFaking\IntegralRandomizer.cs" />
+    <Compile Include="Faking\ValueTypeFaking\IRandomizer.cs" />
+    <Compile Include="Faking\ValueTypeFaking\RandomFactory.cs" />
+    <Compile Include="ObservationController.cs" />
+    <Compile Include="ObservationPair.cs" />
+    <Compile Include="Observations\CoreObservations.cs" />
+    <Compile Include="Observations\CoreObserves.cs" />
+    <Compile Include="Observations\InstanceObservations.cs" />
+    <Compile Include="Observations\RhinoMocks\Observes.cs" />
+    <Compile Include="Observations\StaticObservations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SUTContextSetup.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
