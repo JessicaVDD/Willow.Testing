@@ -1,0 +1,6 @@
+Testing framework (BDD style)
+
+Makes testing easier.
+- Heavily based upon developwithpassion.specifications (really liked that one)
+- Wanted more control and keep track of latest version of MSpec & Rhino
+- Added some minor tweaks to make my life happier
