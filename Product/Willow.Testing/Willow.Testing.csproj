@@ -44,6 +44,9 @@
     <Reference Include="Machine.Specifications.Clr4">
       <HintPath>..\..\packages\Machine.Specifications.0.5.15\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -110,6 +113,7 @@
     <Compile Include="Faking\ValueTypeFaking\GeneralRandomizer.cs" />
     <Compile Include="Faking\ValueTypeFaking\IntegralRandomizer.cs" />
     <Compile Include="Faking\ValueTypeFaking\IRandomizer.cs" />
+    <Compile Include="Faking\ValueTypeFaking\ObjectRandomizer.cs" />
     <Compile Include="Faking\ValueTypeFaking\RandomFactory.cs" />
     <Compile Include="ObservationController.cs" />
     <Compile Include="ObservationPair.cs" />

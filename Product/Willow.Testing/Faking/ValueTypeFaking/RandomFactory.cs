@@ -36,6 +36,12 @@ namespace Willow.Testing.Faking.ValueTypeFaking
 
             if (ReferenceEquals(res, null)) throw new ArgumentException("Cannot create a generator for the specified type.");
             return res;
-        }      
+        }
+
+        public static IRandomizer<T> GetRandomizer<T>(Func<T> creator) where T : class
+        {
+            return new ObjectRandomizer<T>(creator);
+        }
+
     }
 }

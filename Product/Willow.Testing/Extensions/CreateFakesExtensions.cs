@@ -11,5 +11,11 @@ namespace Willow.Testing.Extensions
             var rnd = RandomFactory.GetRandomizer<T>();
             return rnd.Next();
         }
+
+        public static T a_sealed<T>(this ICreateFakes fake, Func<T> creator) where T : class
+        {
+            var rnd = RandomFactory.GetRandomizer<T>(creator);
+            return rnd.Next();
+        }
     }
 }
