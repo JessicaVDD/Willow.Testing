@@ -11,21 +11,18 @@ namespace Willow.Testing.Extensions
             item.WasNotToldTo(behaviour);
         }
 
-        public static IMethodCallOccurrence received<Fake>(this Fake item, Expression<Action<Fake>> behaviour)
-            where Fake : class
+        public static IMethodCallOccurrence received<Fake>(this Fake item, Expression<Action<Fake>> behaviour) where Fake : class
         {
             return item.WasToldTo(behaviour);
         }
 
-        public static IQueryOptions<TReturnValue> setup<TFake, TReturnValue>(this TFake fake,
-                                                                             Expression<Func<TFake, TReturnValue>> func)
+        public static IQueryOptions<TReturnValue> setup<TFake, TReturnValue>(this TFake fake, Expression<Func<TFake, TReturnValue>> func)
             where TFake : class
         {
             return fake.WhenToldTo(func);
         }
 
-        public static ICommandOptions setup<TFake>(this TFake fake,
-                                                                             Expression<Action<TFake>> action) where TFake:class
+        public static ICommandOptions setup<TFake>(this TFake fake, Expression<Action<TFake>> action) where TFake:class
         {
             return fake.WhenToldTo(action);
         }
